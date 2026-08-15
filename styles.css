@@ -72,62 +72,63 @@
   --social-shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.24);
   --social-ink: var(--ink);
 }
-body.template-personal-brand-editorial-print {
+body.template-personal-brand-console-chrome {
 
   color-scheme: light;
-  --accent: #057dbc;
-  --action-bg: #ffffff;
-  --action-border: #000000;
-  --ambient: none;
-  --avatar-size: 96px;
-  --bio-ink: #222222;
-  --canvas: #ffffff;
-  --card-bg: #ffffff;
-  --card-border: #000000;
-  --card-shadow: none;
-  --cta-bg: #000000;
-  --cta-bg-hover: #252525;
-  --cta-border: #000000;
-  --cta-ink: #ffffff;
-  --display-font: Georgia, "Times New Roman", serif;
-  --headline-size: 76px;
-  --headline-size-mobile: 44px;
-  --headline-weight: 400;
-  --ink: #000000;
+  --accent: #f68d1f;
+  --action-bg: #dedede;
+  --action-border: #3d4f97;
+  --ambient: linear-gradient(180deg, #9fbee7 0 78px, transparent 78px), radial-gradient(circle at 10px 10px, rgba(33, 36, 46, 0.16) 1px, transparent 1px);
+  --avatar-size: 104px;
+  --bio-ink: #3d4f97;
+  --canvas: #7a8aba;
+  --card-bg: #dedede;
+  --card-border: #3d4f97;
+  --card-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.64), inset -2px -2px 0 rgba(33, 36, 46, 0.22), rgba(33, 36, 46, 0.18) 0 18px 38px;
+  --cta-bg: #f68d1f;
+  --cta-bg-hover: #e48600;
+  --cta-border: #21242e;
+  --cta-ink: #21242e;
+  --display-font: Arial Black, Arial, sans-serif;
+  --headline-size: 52px;
+  --headline-size-mobile: 34px;
+  --headline-weight: 900;
+  --ink: #21242e;
   --link-bg: #ffffff;
-  --link-bg-hover: #f4f4f4;
-  --link-border: #000000;
-  --link-gap: 0;
-  --link-icon-bg: #ffffff;
-  --link-icon-bg-hover: #057dbc;
+  --link-bg-hover: #ecab37;
+  --link-border: #3d4f97;
+  --link-gap: 8px;
+  --link-icon-bg: #9fbee7;
+  --link-icon-bg-hover: #e60012;
   --link-icon-ink-hover: #ffffff;
-  --link-meta: #5c5c5c;
-  --link-shadow: none;
-  --link-shadow-hover: none;
-  --meta-bg: #f4f4f4;
-  --meta-border: #000000;
-  --muted: #5c5c5c;
-  --panel-bg: #ffffff;
-  --panel-border: #000000;
-  --panel-padding: 0;
-  --profile-bg: transparent;
-  --profile-border: transparent;
-  --profile-padding: 0 0 18px;
-  --radius-action: 0;
-  --radius-avatar: 0;
-  --radius-card: 0;
-  --radius-panel: 0;
-  --section-gap: 18px;
-  --shell-padding-block: 38px 30px;
-  --shell-width: 920px;
-  --surface: #ffffff;
+  --link-meta: #3d4f97;
+  --link-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.74), inset -1px -1px 0 rgba(33, 36, 46, 0.18);
+  --link-shadow-hover: inset 1px 1px 0 rgba(255, 255, 255, 0.78), inset -1px -1px 0 rgba(33, 36, 46, 0.2), 0 8px 0 rgba(33, 36, 46, 0.14);
+  --meta-bg: #9fbee7;
+  --meta-border: #3d4f97;
+  --muted: #3d4f97;
+  --panel-bg: #dedede;
+  --panel-border: #3d4f97;
+  --panel-padding: 16px;
+  --profile-bg: #c0d5e6;
+  --profile-border: #3d4f97;
+  --profile-button-outset: 18px;
+  --profile-padding: 18px;
+  --radius-action: 4px;
+  --radius-avatar: 6px;
+  --radius-card: 6px;
+  --radius-panel: 10px;
+  --section-gap: 12px;
+  --shell-padding-block: 36px 30px;
+  --shell-width: 780px;
+  --surface: #dedede;
   --social-bg: #ffffff;
-  --social-border: #000000;
-  --social-hover-bg: #057dbc;
-  --social-hover-border: #057dbc;
+  --social-border: #3d4f97;
+  --social-hover-bg: #e60012;
+  --social-hover-border: #21242e;
   --social-hover-ink: #ffffff;
-  --social-ink: #000000;
-  --surface-2: #f5f5f5;
+  --social-ink: #21242e;
+  --surface-2: #9fbee7;
   --cta-ink-hover: var(--cta-ink);
   --cta-icon-bg: color-mix(in srgb, var(--cta-ink), transparent 86%);
   --cta-icon-border: color-mix(in srgb, var(--cta-ink), transparent 72%);
@@ -309,12 +310,19 @@ footer span,
 }
 h1 {
   font-family: var(--display-font);
-  font-size: var(--headline-size);
+  font-size: min(var(--headline-size), 44px);
   font-weight: var(--headline-weight);
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.08;
   margin: 0;
   overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+h1.headline-medium {
+  font-size: min(var(--headline-size), 40px);
+}
+h1.headline-long {
+  font-size: min(var(--headline-size), 34px);
 }
 .bio {
   color: var(--bio-ink, #d0d6e0);
@@ -842,7 +850,14 @@ footer a:hover {
     width: min(calc(100% - 24px), var(--shell-width));
   }
   h1 {
-    font-size: var(--headline-size-mobile);
+    font-size: min(var(--headline-size-mobile), 30px);
+    line-height: 1.1;
+  }
+  h1.headline-medium {
+    font-size: min(var(--headline-size-mobile), 28px);
+  }
+  h1.headline-long {
+    font-size: min(var(--headline-size-mobile), 25px);
   }
   .profile-card {
     padding: max(18px, calc(var(--card-padding) - 8px));
